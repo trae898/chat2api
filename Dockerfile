@@ -35,4 +35,4 @@ COPY --from=builder /app/supercronic /usr/local/bin/supercronic
 EXPOSE 5005
 
 ENTRYPOINT ["./hugface/entrypoint.sh"]
-CMD ["supervisord", "-c", "/app/supervisor/supervisord.conf"]
+CMD ["supervisord", "-c", "./hugface/supervisord.conf"]
