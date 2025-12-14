@@ -8,4 +8,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5005
 
+ENTRYPOINT ["/entrypoint.sh"]
+
 CMD ["python", "app.py"]
