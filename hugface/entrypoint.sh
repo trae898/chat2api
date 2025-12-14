@@ -3,6 +3,6 @@
 sed -i "s/DOMAIN/$DOMAIN/g" ./hugface/keepalive.sh
 
 # exec supervisord -c ./hugface/supervisord.conf
-exec python app.py
+# exec python app.py
 
 exec "$@"
