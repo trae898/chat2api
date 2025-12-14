@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt; \
     wget -O td https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64; \
     chmod +x td; \
     wget -O supercronic https://github.com/aptible/supercronic/releases/latest/download/supercronic-linux-amd64; \
