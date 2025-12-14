@@ -1,1 +1,1 @@
-*/5 * * * * /app/hugface/keepalive.sh
+*/5 * * * * ./hugface/keepalive.sh
