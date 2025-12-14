@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-sed -i "s/UUID/$UUID/g" /app/xy/config.json
 sed -i "s/DOMAIN/$DOMAIN/g" /app/keepalive.sh
 
 # cp /etc/resolv.conf /etc/resolv.conf.bak
