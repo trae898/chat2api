@@ -10,13 +10,13 @@ RUN pip install --no-cache-dir -r requirements.txt; \
     wget -O supercronic https://github.com/aptible/supercronic/releases/latest/download/supercronic-linux-amd64; \
     chmod +x supercronic
     
-RUN chmod +x /app/hugface/entrypoint.sh
+RUN chmod +x /hugface/entrypoint.sh
 
-COPY /app/hugface/my-crontab /usr/local/bin/td/my-crontab
-COPY /app/hugface/supervisord.conf /usr/local/bin/supercronic/supervisord.conf
+COPY /hugface/my-crontab /usr/local/bin/td/my-crontab
+COPY /hugface/supervisord.conf /usr/local/bin/supercronic/supervisord.conf
 
 EXPOSE 5005
 
-ENTRYPOINT ["/app/hugface/entrypoint.sh"]
+ENTRYPOINT ["/hugface/entrypoint.sh"]
 
 CMD ["python", "app.py"]
