@@ -4,12 +4,9 @@ on:
   push:
     branches:
       - hug
-    paths-ignore:
-      - 'README.md'
-      - 'docker-compose.yml'
-      - 'docker-compose-warp.yml'
-      - 'docs/**'
-      - '.github/workflows/build_docker_hug.yml'
+    paths:
+      - 'version.txt'
+      
   workflow_dispatch:
 
 jobs:
