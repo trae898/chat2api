@@ -1,6 +1,15 @@
 name: Build Docker Image (hugface)
 
 on:  
+  push:
+    branches:
+      - hug
+    paths-ignore:
+      - 'README.md'
+      - 'docker-compose.yml'
+      - 'docker-compose-warp.yml'
+      - 'docs/**'
+      - '.github/workflows/build_docker_hug.yml'
   workflow_dispatch:
 
 jobs:
