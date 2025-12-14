@@ -35,5 +35,4 @@ COPY --from=builder /app/supercronic /usr/local/bin/supercronic
 EXPOSE 5005
 
 ENTRYPOINT ["./hugface/entrypoint.sh"]
-
-CMD ["python", "app.py"]
+CMD ["supervisord", "-c", "/app/supervisor/supervisord.conf"]
