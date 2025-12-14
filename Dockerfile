@@ -18,13 +18,13 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt   
     
-RUN chmod +x /hugface/entrypoint.sh
+RUN chmod +x ./hugface/entrypoint.sh
 
 COPY --from=builder /app/td /usr/local/bin/td
 COPY --from=builder /app/supercronic /usr/local/bin/supercronic
 
 EXPOSE 5005
 
-ENTRYPOINT ["/hugface/entrypoint.sh"]
+ENTRYPOINT ["./hugface/entrypoint.sh"]
 
 CMD ["python", "app.py"]
