@@ -26,17 +26,7 @@ jobs:
         run: |
           version=$(cat version.txt)
           echo "Current version: v$version"
-          echo "::set-output name=version::v$version"
-
-      - name: Commit and push version tag
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          version=${{ steps.get_version.outputs.version }}
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git tag "$version"
-          git push https://x-access-token:${GHCR_PAT}@github.com/${{ github.repository_owner }}/chat2api.git "$version"
+          echo "::set-output name=version::v$version"      
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3      
