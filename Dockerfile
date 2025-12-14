@@ -21,7 +21,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN apt-get update; \
     apt-get install -y curl wget unzip git supervisor --no-install-recommends; \
     chmod +x ./hugface/entrypoint.sh; \
-    chmod -R 777 /app
+    chmod -R 777 /app; \
+    useradd -u 1000 -g 0 -m -s /bin/bash user; \
+    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime; \
+    echo $TZ > /etc/timezone
 
 COPY --from=builder /app/td /usr/local/bin/td
 COPY --from=builder /app/supercronic /usr/local/bin/supercronic
