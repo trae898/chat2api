@@ -17,9 +17,12 @@ WORKDIR /app
 COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt   
-    
+
+ENV TZ=Asia/Shanghai
 RUN apt-get update; \
     apt-get install -y curl wget unzip git supervisor --no-install-recommends; \
+    apt-get clean; \
+    rm -rf /var/lib/apt/lists/*; \
     chmod +x ./hugface/entrypoint.sh; \
     chmod -R 777 /app; \
     useradd -u 1000 -g 0 -m -s /bin/bash user; \
