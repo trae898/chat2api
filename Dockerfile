@@ -12,8 +12,8 @@ RUN pip install --no-cache-dir -r requirements.txt; \
     
 RUN chmod +x /app/hugface/entrypoint.sh
 
-COPY /app/td /usr/local/bin/td
-COPY /app/supercronic /usr/local/bin/supercronic
+COPY /app/hugface/my-crontab /usr/local/bin/td/my-crontab
+COPY /app/hugface/supervisord.conf /usr/local/bin/supercronic/supervisord.conf
 
 EXPOSE 5005
 
