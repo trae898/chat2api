@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-sed -i "s/DOMAIN/$DOMAIN/g" /app/hugface/keepalive.sh
+sed -i "s/DOMAIN/$DOMAIN/g" ./hugface/keepalive.sh
 
-exec supervisord -c /app/hugface/supervisord.conf
+exec supervisord -c ./hugface/supervisord.conf
 
 exec "$@"
