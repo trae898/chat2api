@@ -18,7 +18,9 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt   
     
-RUN chmod +x ./hugface/entrypoint.sh; \
+RUN apt-get update; \
+    apt-get install -y curl wget unzip git supervisor --no-install-recommends; \
+    chmod +x ./hugface/entrypoint.sh; \
     chmod -R 777 /app
 
 COPY --from=builder /app/td /usr/local/bin/td
